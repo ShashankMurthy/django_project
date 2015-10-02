@@ -1,0 +1,13 @@
+{% load staticfiles %}
+
+<div>
+<h1>{{ article.title }}</h1>
+</div>
+
+<div>
+ <img src="http://localhost:8000/{{ article.image }}" height="20%" width="100%"> 
+</div>
+
+<div>
+{{ article.body }}
+</div>

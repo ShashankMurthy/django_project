@@ -1,0 +1,46 @@
+{% extends 'articles/base.html' %}
+{% load staticfiles %}
+
+<link rel="stylesheet" href="articles/style.css" type="text/css"/>
+{% block content %}
+
+{% if latest_articles_list %}
+    <ul>
+    {% for articles in latest_articles_list %}
+		<div class="content">
+        <li><a href="{% url 'articles:detail' articles.id %}">{{ articles.title }}</a></li>
+			{{ articles.body }}
+		</div>
+		<div>
+		</div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No articles are available.</p>
+{% endif %}
+
+<div class="content" width="50%">
+				<table width="75%" height="10%">
+				<tr><h2>What to read next...</h2></tr>
+				<tr>
+				<td>
+				<h3><a href='http://localhost:8000/articles/5'> <title="You can read this 1">Lorem ipsum</a></h3>
+				<img src="http://localhost:8000/static/upload/butterfly.jpg" width="50" height="50">
+				</td>
+				<td>
+				<h3><a href='http://localhost:8000/articles/5'> <title="You can read this 1">Lorem ipsum</a></h3>
+				<img src="http://localhost:8000/static/upload/butterfly.jpg" width="50" height="50">
+				</td>
+				<td>
+				<h3><a href='http://localhost:8000/articles/5'> <title="You can read this 1">Lorem ipsum</a></h3>
+				<img src="http://localhost:8000/static/upload/butterfly.jpg" width="50" height="50">
+				</td>
+				<td>
+				<h3><a href='http://localhost:8000/articles/5'> <title="You can read this 1">Lorem ipsum</a></h3>
+				<img src="http://localhost:8000/static/upload/butterfly.jpg" width="50" height="50">
+				</td>
+				</tr>
+				</table>
+</div>
+
+{% endblock %}
